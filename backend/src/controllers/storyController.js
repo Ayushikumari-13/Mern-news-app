@@ -1,4 +1,4 @@
-const Story = require("../models/temp");
+const Story = require("../models/Story");
 
 const User = require("../models/User");
 
