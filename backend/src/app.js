@@ -8,13 +8,14 @@ const scraperRoutes = require("./routes/scraperRoutes");
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("MERN News Backend Running 🚀");
+});
+
 app.use("/api/auth", authRoutes);
-
 app.use("/api/stories", storyRoutes);
-
 app.use("/api/scrape", scraperRoutes);
 
 module.exports = app;
