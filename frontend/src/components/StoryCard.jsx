@@ -33,12 +33,19 @@ const StoryCard = ({ story }) => {
         borderRadius: "14px",
         backgroundColor: "white",
         boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        width: "100%",
+        boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
       <h2
         style={{
           marginBottom: "10px",
           color: "#111827",
+          fontSize: "clamp(22px, 5vw, 38px)",
+          lineHeight: "1.3",
+          wordBreak: "break-word",
+          overflowWrap: "break-word",
         }}
       >
         {story?.title}
@@ -47,6 +54,7 @@ const StoryCard = ({ story }) => {
       <p
         style={{
           color: "#374151",
+          fontSize: "clamp(16px, 3vw, 22px)",
         }}
       >
         <strong>Author:</strong> {story?.author}
@@ -55,6 +63,7 @@ const StoryCard = ({ story }) => {
       <p
         style={{
           color: "#374151",
+          fontSize: "clamp(16px, 3vw, 22px)",
         }}
       >
         <strong>Points:</strong> {story?.points}
@@ -65,6 +74,7 @@ const StoryCard = ({ story }) => {
           marginTop: "15px",
           display: "flex",
           gap: "10px",
+          flexWrap: "wrap",
         }}
       >
         <a
@@ -82,6 +92,7 @@ const StoryCard = ({ story }) => {
             padding: "10px 15px",
             borderRadius: "8px",
             fontWeight: "bold",
+            textAlign: "center",
           }}
         >
           Read More
