@@ -68,7 +68,11 @@ const StoryCard = ({ story }) => {
         }}
       >
         <a
-          href={story?.url}
+          href={
+            story?.url?.includes("item?id=")
+              ? `https://news.ycombinator.com/${story.url}`
+              : story.url
+          }
           target="_blank"
           rel="noreferrer"
           style={{
