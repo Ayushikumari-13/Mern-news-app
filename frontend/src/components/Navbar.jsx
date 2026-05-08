@@ -10,16 +10,19 @@ const Navbar = () => {
     <nav
       style={{
         background: "#111827",
-        padding: "18px 40px",
+        padding: "15px 20px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
+        gap: "15px",
       }}
     >
       <h2
         style={{
           color: "white",
           margin: 0,
+          fontSize: "32px",
         }}
       >
         MERN News
@@ -28,8 +31,10 @@ const Navbar = () => {
       <div
         style={{
           display: "flex",
-          gap: "20px",
+          gap: "15px",
           alignItems: "center",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
         <Link
@@ -85,6 +90,7 @@ const linkStyle = {
   color: "white",
   textDecoration: "none",
   fontWeight: "bold",
+  fontSize: "18px",
 };
 
 export default Navbar;
