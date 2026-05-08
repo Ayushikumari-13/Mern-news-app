@@ -10,19 +10,12 @@ const Home = () => {
     try {
       const res = await API.get("/stories");
 
-      console.log(res.data);
+      console.log("API RESPONSE:", res.data);
 
-      if (Array.isArray(res.data)) {
-        setStories(res.data);
-      } else if (res.data.stories) {
-        setStories(res.data.stories);
-      } else {
-        setStories([]);
-      }
+      setStories(res.data);
 
     } catch (error) {
-      console.log(error);
-      setStories([]);
+      console.log("ERROR:", error);
     } finally {
       setLoading(false);
     }
