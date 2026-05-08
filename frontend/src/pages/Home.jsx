@@ -10,13 +10,19 @@ const Home = () => {
     try {
       const res = await API.get("/stories");
 
-      console.log("Stories Data:", res.data);
+      console.log(res.data);
 
-      setStories(res.data);
+      if (Array.isArray(res.data)) {
+        setStories(res.data);
+      } else if (res.data.stories) {
+        setStories(res.data.stories);
+      } else {
+        setStories([]);
+      }
+
     } catch (error) {
-      console.log(
-        error.response?.data || error.message
-      );
+      console.log(error);
+      setStories([]);
     } finally {
       setLoading(false);
     }
@@ -45,15 +51,15 @@ const Home = () => {
 
       {loading ? (
         <h2>Loading...</h2>
-      ) : stories.length > 0 ? (
+      ) : stories.length === 0 ? (
+        <h2>No Stories Found 😄</h2>
+      ) : (
         stories.map((story) => (
           <StoryCard
             key={story._id}
             story={story}
           />
         ))
-      ) : (
-        <h2>No Stories Found 😄</h2>
       )}
     </div>
   );
