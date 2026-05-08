@@ -7,7 +7,13 @@ const scraperRoutes = require("./routes/scraperRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://mern-news-app-one.vercel.app",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
